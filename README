@@ -1,0 +1,91 @@
+libebml
+------------------------------------------
+EBML was designed to be a simplified binary extension of XML for the 
+purpose of storing and manipulating data in a hierarchical form with 
+variable field lengths.
+
+Runtime requirements:
+  cygwin-1.5.24-2
+
+Build requirements:
+  cygwin-1.5.24-2
+  binutils-20060817-1
+  cygport-0.2.11-1
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  make-3.81-1
+
+Canonical website:
+  http://www.matroska.org/
+  http://ebml.sourceforge.net/
+
+Canonical download:
+  http://dl.matroska.org/downloads/libebml/
+
+-------------------------------------------
+
+Build instructions:
+  unpack libebml-0.7.7-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libebml-0.7.7-X.cygport all
+
+This will create:
+  /usr/src/libebml-0.7.7-X-src.tar.bz2
+  /usr/src/libebml-0.7.7-X.tar.bz2
+  /usr/src/libebml-devel-0.7.7-X.tar.bz2
+  /usr/src/libebml0-0.7.7-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(libebml)
+  /usr/share/doc/Cygwin/libebml-0.7.7.README
+  /usr/share/doc/libebml-0.7.7/ChangeLog
+  /usr/share/doc/libebml-0.7.7/LICENSE.LGPL
+
+(libebml0)
+  /usr/bin/cygebml-0.dll
+
+(libebml-devel)
+  /usr/include/ebml/Debug.h
+  /usr/include/ebml/EbmlBinary.h
+  /usr/include/ebml/EbmlConfig.h
+  /usr/include/ebml/EbmlContexts.h
+  /usr/include/ebml/EbmlCrc32.h
+  /usr/include/ebml/EbmlDate.h
+  /usr/include/ebml/EbmlDummy.h
+  /usr/include/ebml/EbmlElement.h
+  /usr/include/ebml/EbmlEndian.h
+  /usr/include/ebml/EbmlFloat.h
+  /usr/include/ebml/EbmlHead.h
+  /usr/include/ebml/EbmlId.h
+  /usr/include/ebml/EbmlMaster.h
+  /usr/include/ebml/EbmlSInteger.h
+  /usr/include/ebml/EbmlStream.h
+  /usr/include/ebml/EbmlString.h
+  /usr/include/ebml/EbmlSubHead.h
+  /usr/include/ebml/EbmlTypes.h
+  /usr/include/ebml/EbmlUInteger.h
+  /usr/include/ebml/EbmlUnicodeString.h
+  /usr/include/ebml/EbmlVersion.h
+  /usr/include/ebml/EbmlVoid.h
+  /usr/include/ebml/IOCallback.h
+  /usr/include/ebml/MemIOCallback.h
+  /usr/include/ebml/StdIOCallback.h
+  /usr/include/ebml/c/libebml_t.h
+  /usr/lib/libebml.a
+  /usr/lib/libebml.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 0.7.7-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
