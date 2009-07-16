@@ -1,6 +1,5 @@
 category: Libs
-requires: libebml0 libebml-devel
-sdesc: "Extensible Binary Meta-Language library (meta-package)"
+sdesc: "Extensible Binary Meta-Language library (sources)"
 ldesc: "EBML was designed to be a simplified binary extension of XML for 
 the purpose of storing and manipulating data in a hierarchical form with 
 variable field lengths."

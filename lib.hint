@@ -1,5 +1,5 @@
 category: Libs
-requires: cygwin
+requires: libgcc1 libstdc++6
 external-source: libebml
 sdesc: "Extensible Binary Meta-Language library (runtime)"
 ldesc: "EBML was designed to be a simplified binary extension of XML for 

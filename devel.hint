@@ -1,5 +1,5 @@
 category: Libs
-requires: cygwin
+requires: libebml0
 external-source: libebml
 sdesc: "Extensible Binary Meta-Language library (development)"
 ldesc: "EBML was designed to be a simplified binary extension of XML for 

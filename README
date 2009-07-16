@@ -5,15 +5,16 @@ purpose of storing and manipulating data in a hierarchical form with
 variable field lengths.
 
 Runtime requirements:
-  cygwin-1.5.24-2
+  cygwin-1.7.0-51
+  libgcc1-4.3.2-2
+  libstdc++6-4.3.2-2
 
 Build requirements:
-  cygwin-1.5.24-2
-  binutils-20060817-1
-  cygport-0.2.11-1
-  gcc-core-3.4.4-3
-  gcc-g++-3.4.4-3
-  make-3.81-1
+  binutils-2.19.51-1
+  cygport-0.9.7-1
+  gcc4-core-4.3.2-2
+  gcc4-g++-4.3.2-2
+  libtool-2.2.7a-14
 
 Canonical website:
   http://www.matroska.org/
@@ -25,29 +26,25 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack libebml-0.7.7-X-src.tar.bz2
+  unpack libebml-0.7.8-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./libebml-0.7.7-X.cygport all
+  cygport ./libebml-0.7.8-X.cygport all
 
 This will create:
-  /usr/src/libebml-0.7.7-X-src.tar.bz2
-  /usr/src/libebml-0.7.7-X.tar.bz2
-  /usr/src/libebml-devel-0.7.7-X.tar.bz2
-  /usr/src/libebml0-0.7.7-X.tar.bz2
+  /usr/src/libebml-0.7.8-X-src.tar.bz2
+  /usr/src/libebml-devel-0.7.8-X.tar.bz2
+  /usr/src/libebml0-0.7.8-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary packages:
 
-(libebml)
-  /usr/share/doc/Cygwin/libebml-0.7.7.README
-  /usr/share/doc/libebml-0.7.7/ChangeLog
-  /usr/share/doc/libebml-0.7.7/LICENSE.LGPL
-
 (libebml0)
   /usr/bin/cygebml-0.dll
+  /usr/share/doc/libebml/ChangeLog
+  /usr/share/doc/libebml/LICENSE.LGPL
 
 (libebml-devel)
   /usr/include/ebml/Debug.h
@@ -83,7 +80,7 @@ Files included in the binary packages:
 
 Port Notes:
 
------ version 0.7.7-1 -----
+----- version 0.7.8-1 -----
 Initial release for Cygwin.
 
 
