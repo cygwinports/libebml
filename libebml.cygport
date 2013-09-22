@@ -1,8 +1,15 @@
-DESCRIPTION="Extensible Binary Meta-Language library"
+NAME="libebml"
+VERSION=1.2.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Extensible Binary Meta-Language library"
+DESCRIPTION="EBML was designed to be a simplified binary extension of XML for
+the purpose of storing and manipulating data in a hierarchical form with
+variable field lengths."
 HOMEPAGE="http://www.matroska.org/"
-SRC_URI="http://dl.matroska.org/downloads/${PN}/${P}.tar.bz2"
+SRC_URI="http://dl.matroska.org/downloads/libebml/${NAME}-${VERSION}.tar.bz2"
 
-PKG_NAMES="${PN}3 ${PN}-devel"
+PKG_NAMES="${NAME}3 ${NAME}-devel"
 libebml3_CONTENTS="usr/bin/*-3.dll usr/share/doc/"
 libebml_devel_CONTENTS='usr/include/ usr/lib/'
 

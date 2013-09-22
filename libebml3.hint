@@ -1,7 +1,0 @@
-category: Libs
-requires: libgcc1 libstdc++6
-external-source: libebml
-sdesc: "Extensible Binary Meta-Language library (runtime)"
-ldesc: "EBML was designed to be a simplified binary extension of XML for 
-the purpose of storing and manipulating data in a hierarchical form with 
-variable field lengths."
