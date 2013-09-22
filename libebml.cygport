@@ -8,32 +8,21 @@ the purpose of storing and manipulating data in a hierarchical form with
 variable field lengths."
 HOMEPAGE="http://www.matroska.org/"
 SRC_URI="http://dl.matroska.org/downloads/libebml/${NAME}-${VERSION}.tar.bz2"
+PATCH_URI="1.3.0-make-cygwin.patch"
 
-PKG_NAMES="${NAME}3 ${NAME}-devel"
-libebml3_CONTENTS="usr/bin/*-3.dll usr/share/doc/"
+PKG_NAMES="${NAME}4 ${NAME}-devel"
+libebml4_CONTENTS="usr/bin/*-4.dll usr/share/doc/"
 libebml_devel_CONTENTS='usr/include/ usr/lib/'
 
 src_compile() {
 	lndirs
-	cd ${B}/src
-	for c in *.cpp
-	do
-		libtool --mode=compile --tag=disable-static --tag=CXX ${CXX} ${CXXFLAGS} -I.. -c -o ${c%.cpp}.lo ${c} || error "Compile failed on ${c}"
-	done
-	libtool --mode=link --tag=disable-static --tag=CXX ${CXX} ${LDFLAGS} \
-		-rpath /usr/lib -no-undefined -version-info 3 \
-		-o libebml.la *.lo || error "libebml link failed"
+	cd ${B}/make/linux
+	cygmake sharedlib
 }
 
 src_install() {
-	dolib ${B}/src/libebml.la
-	rm -f ${D}/usr/lib/libebml.la
-
-	insinto /usr/include/ebml
-	doins ${S}/ebml/*.h
-
-	insinto /usr/include/ebml/c
-	doins ${S}/ebml/c/*.h
+	cd ${B}/make/linux
+	cygmake install_headers install_sharedlib prefix=${D}/usr
 
 	dodoc ${S}/LICENSE.LGPL
 }

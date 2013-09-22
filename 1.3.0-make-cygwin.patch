@@ -1,0 +1,45 @@
+--- origsrc/libebml-1.3.0/make/linux/Makefile	2013-03-19 13:42:58.000000000 -0500
++++ src/libebml-1.3.0/make/linux/Makefile	2013-09-22 10:58:55.776164700 -0500
+@@ -16,6 +16,7 @@ prefix=/boot/home/config
+ else
+ prefix=/usr/local
+ endif
++bindir=$(prefix)/bin
+ libdir=$(prefix)/lib
+ includedir=$(prefix)/include/ebml
+ 
+@@ -48,8 +49,8 @@ LIBS=
+ 
+ # Names
+ LIBRARY=libebml.a
+-LIBRARY_SO=libebml.so
+-LIBRARY_SO_VER=libebml.so.4
++LIBRARY_SO=libebml.dll.a
++LIBRARY_SO_VER=cygebml-4.dll
+ 
+ # source-files
+ sources:=$(wildcard ${SRC_DIR}*$(EXTENSION))
+@@ -91,9 +92,7 @@ $(LIBRARY): $(objects)
+ 	$(RANLIB) $@
+ 
+ $(LIBRARY_SO): $(objects_so)
+-	$(CXX) -shared -Wl,-soname,$(LIBRARY_SO_VER) -o $(LIBRARY_SO_VER) $(objects_so)
+-	rm -f $(LIBRARY_SO)
+-	ln -s $(LIBRARY_SO_VER) $(LIBRARY_SO)
++	$(CXX) -shared -Wl,--out-implib,$(LIBRARY_SO) -o $(LIBRARY_SO_VER) $(objects_so)
+ 
+ clean:
+ 	rm -f $(objects) $(objects_so)
+@@ -136,9 +135,10 @@ install_staticlib: $(LIBRARY)
+ 	$(INSTALL) $(INSTALL_OPTS_LIB) $(LIBRARY) $(libdir)
+ 
+ install_sharedlib: $(LIBRARY_SO)
++	$(INSTALL) $(INSTALL_DIR_OPTS) -d $(bindir)
+ 	$(INSTALL) $(INSTALL_DIR_OPTS) -d $(libdir)
+-	$(INSTALL) $(INSTALL_OPTS_LIB) $(LIBRARY_SO_VER) $(libdir)
+-	ln -fs $(LIBRARY_SO_VER) $(libdir)/$(LIBRARY_SO)
++	$(INSTALL) $(INSTALL_DIR_OPTS) $(LIBRARY_SO_VER) $(bindir)
++	$(INSTALL) $(INSTALL_OPTS_LIB) $(LIBRARY_SO) $(libdir)
+ 
+ 
+ ifneq ($(wildcard .depend),)
